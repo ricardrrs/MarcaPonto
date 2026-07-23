@@ -1,0 +1,13 @@
+{
+  "name": "marcaponto-api",
+  "version": "0.1.0",
+  "private": true,
+  "description": "API para servir o sistema MarcaPonto e integrações REP-C/REP-P.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "NODE_ENV=development node src/server.js",
+    "test": "node --test"
+  },
+  "dependencies": {}
+}

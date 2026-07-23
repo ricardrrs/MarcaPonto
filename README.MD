@@ -205,3 +205,31 @@ Após instalar ou atualizar o sistema, execute a lista de conferência:
 - Não exponha certificados digitais, tokens de REP ou credenciais em repositórios Git.
 - Faça backup periódico dos registros de ponto, logs e arquivos AFD importados.
 - Valide regras trabalhistas e requisitos legais aplicáveis ao ambiente antes de ativar o uso em produção.
+
+## 9. API de desenvolvimento incluída
+
+O repositório também contém uma API em `api/` para servir o sistema em desenvolvimento e homologação. Ela disponibiliza autenticação demo, logs e endpoints REP-C/REP-P compatíveis com a interface web.
+
+Para executar:
+
+```bash
+cd api
+cp .env.example .env
+npm start
+```
+
+Configure a aplicação web para consumir essa API local:
+
+```env
+REACT_APP_API_BASE_URL=http://localhost:8080
+```
+
+Credenciais demo:
+
+```text
+Usuário: admin@marcaponto.local
+Senha: admin123
+Token aceito nos endpoints protegidos: Bearer marcaponto-dev-token
+```
+
+A API usa `api/data/db.json` como armazenamento local. Em produção, substitua esse arquivo por um banco de dados transacional e implemente autenticação JWT, criptografia de senhas, auditoria imutável e conectores certificados dos fornecedores REP.
