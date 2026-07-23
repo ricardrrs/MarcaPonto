@@ -40,3 +40,10 @@ export const ALL_REGISTRO = "/api/v1/tipodoregistro";
 export const STATUS_PONTO = "/api/v1/statusDoPonto";
 //Password
 export const CHANGE_PASSWORD = "/api/v1/auth/password";
+//Integração REP-C / REP-P
+export const ALL_REP_EQUIPAMENTOS = "/api/v1/rep/equipamentos";
+export const INSERT_REP_EQUIPAMENTO = "/api/v1/rep/equipamentos";
+export const UPDATE_REP_EQUIPAMENTO = "/api/v1/rep/equipamentos";
+export const DELETE_REP_EQUIPAMENTO = "/api/v1/rep/equipamentos";
+export const TEST_REP_EQUIPAMENTO = "/api/v1/rep/equipamentos/test";
+export const SYNC_REP_EQUIPAMENTO = "/api/v1/rep/sincronizar";

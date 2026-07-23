@@ -27,6 +27,12 @@ import {
     INSERT_SETOR,
     ALL_REGISTRO,
     STATUS_PONTO,
+    ALL_REP_EQUIPAMENTOS,
+    INSERT_REP_EQUIPAMENTO,
+    UPDATE_REP_EQUIPAMENTO,
+    DELETE_REP_EQUIPAMENTO,
+    TEST_REP_EQUIPAMENTO,
+    SYNC_REP_EQUIPAMENTO,
 } from "./Endpoints";
 import { stat } from "fs";
 import { getLogDate, showToast } from "../Functions";
@@ -1065,3 +1071,74 @@ export const GetAllDelimitadorPonto = () => {
         statusCodeAllDelimitadorPontos: statusCode,
     };
 };
+
+// INTEGRAÇÃO REP-C / REP-P =====================================================
+export async function getAllRepEquipamentos(token: string | null) {
+    if (!token) return false;
+
+    return await api
+        .get(ALL_REP_EQUIPAMENTOS, { headers: { Authorization: token } })
+        .then((response) => response)
+        .catch((err) => err);
+}
+
+export async function insertRepEquipamento(token: string | null, data: any) {
+    if (!token) return false;
+
+    return await api
+        .post(INSERT_REP_EQUIPAMENTO, data, {
+            headers: { Authorization: token },
+        })
+        .then((response) => response)
+        .catch((err) => err);
+}
+
+export async function updateRepEquipamento(
+    token: string | null,
+    id: number,
+    data: any
+) {
+    if (!token) return false;
+
+    return await api
+        .put(`${UPDATE_REP_EQUIPAMENTO}/${id}`, data, {
+            headers: { Authorization: token },
+        })
+        .then((response) => response)
+        .catch((err) => err);
+}
+
+export async function deleteRepEquipamento(token: string | null, id: number) {
+    if (!token) return false;
+
+    return await api
+        .delete(`${DELETE_REP_EQUIPAMENTO}/${id}`, {
+            headers: { Authorization: token },
+        })
+        .then((response) => response)
+        .catch((err) => err);
+}
+
+export async function testRepEquipamento(token: string | null, id: number) {
+    if (!token) return false;
+
+    return await api
+        .post(
+            `${TEST_REP_EQUIPAMENTO}/${id}`,
+            {},
+            { headers: { Authorization: token } }
+        )
+        .then((response) => response)
+        .catch((err) => err);
+}
+
+export async function syncRepEquipamento(token: string | null, data: any) {
+    if (!token) return false;
+
+    return await api
+        .post(SYNC_REP_EQUIPAMENTO, data, {
+            headers: { Authorization: token },
+        })
+        .then((response) => response)
+        .catch((err) => err);
+}

@@ -2,7 +2,9 @@ import { showToast } from "./../Functions/index";
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "https://ws-marcaponto.herokuapp.com",
+    baseURL:
+        process.env.REACT_APP_API_BASE_URL ||
+        "https://ws-marcaponto.herokuapp.com",
     withCredentials: false,
     headers: {
         "Access-Control-Allow-Origin": "*",

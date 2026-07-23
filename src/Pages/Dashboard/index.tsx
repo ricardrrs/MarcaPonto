@@ -37,6 +37,7 @@ import Relatorios from "./Relatorios";
 import Search from "./Search";
 import Marcar from "./Marcar";
 import Delimitar from "./Delimitar";
+import RepIntegracao from "./RepIntegracao";
 
 //Logos
 const JUST_LOGO = require("../../Assets/images/just_logo.png");
@@ -304,6 +305,14 @@ const Dashboard: React.FC<DashboardProps> = ({ match }) => {
                                             <Route
                                                 path={`${path}/relatorios`}
                                                 component={Relatorios}
+                                                exact
+                                            />
+                                        )}
+
+                                        {(isAdmin || isGestor) && (
+                                            <Route
+                                                path={`${path}/rep-integracao`}
+                                                component={RepIntegracao}
                                                 exact
                                             />
                                         )}
