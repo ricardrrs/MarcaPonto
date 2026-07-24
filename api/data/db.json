@@ -1,0 +1,15 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "username": "Administrador",
+      "email": "admin@marcaponto.local",
+      "password": "admin123",
+      "colaboradorId": 1,
+      "perfis": ["ROLE_ADMIN", "ROLE_GESTOR"]
+    }
+  ],
+  "repEquipamentos": [],
+  "repSincronizacoes": [],
+  "logs": []
+}

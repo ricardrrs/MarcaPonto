@@ -6,6 +6,7 @@ import {
     FaUserAlt,
     FaUserClock,
     FaHammer,
+    FaPlug,
 } from "react-icons/fa";
 import { ImBook } from "react-icons/im";
 import { MdWork } from "react-icons/md";
@@ -132,6 +133,14 @@ const SideBar: React.FC<SideBarProps> = ({ type }) => {
                                 text="Relatórios"
                                 from="dashboard"
                                 link="/relatorios"
+                            />
+                        </li>
+                        <li>
+                            <MenuLink
+                                icon={<FaPlug color="#222" size={18} />}
+                                text="Integração REP"
+                                from="dashboard"
+                                link="/rep-integracao"
                             />
                         </li>
                         <li>

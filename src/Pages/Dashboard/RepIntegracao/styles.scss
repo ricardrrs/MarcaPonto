@@ -1,0 +1,102 @@
+.rep__wrapper {
+    width: 100%;
+
+    .rep__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 24px;
+        margin-bottom: 24px;
+    }
+
+    .rep__form {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+
+        label {
+            color: #555;
+            display: flex;
+            flex-direction: column;
+            font-size: 14px;
+            font-weight: 600;
+            gap: 6px;
+        }
+
+        input,
+        select,
+        textarea {
+            border: 1px solid #d7d7e2;
+            border-radius: 8px;
+            color: #222;
+            font-size: 14px;
+            min-height: 42px;
+            padding: 10px 12px;
+        }
+
+        textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+    }
+
+    .rep__hint {
+        background: #f3f6ff;
+        border-left: 4px solid #5850ec;
+        border-radius: 6px;
+        color: #4a4a68;
+        font-size: 13px;
+        margin: 0;
+        padding: 10px 12px;
+    }
+
+    .rep__check {
+        align-items: center;
+        flex-direction: row !important;
+
+        input {
+            min-height: auto;
+            width: auto;
+        }
+    }
+
+    .rep__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .rep__list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin-top: 16px;
+    }
+
+    .rep__item {
+        align-items: center;
+        border: 1px solid #e8e8f2;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        padding: 16px;
+
+        div:first-child {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        span {
+            color: #666;
+            font-size: 13px;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .rep__wrapper .rep__item {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+}
